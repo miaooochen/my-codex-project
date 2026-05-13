@@ -32,11 +32,18 @@
       </header>
 
       <nav class="quick-nav" aria-label="主要導覽">
-        <button class="quick-nav__item" data-jump="#overview">行程總覽</button>
-        <button class="quick-nav__item" data-jump="#schedule">每日行程</button>
-        <button class="quick-nav__item" data-jump="#flights">航班資訊</button>
-        <button class="quick-nav__item" data-jump="#care">貼心提醒</button>
-        <button class="quick-nav__item" data-jump="#checklist">行前清單</button>
+        <button class="quick-nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+          <span class="quick-nav__toggle-icon"></span>
+          <span>快速導覽</span>
+          <svg class="quick-nav__chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="quick-nav__links" id="navLinks">
+          <button class="quick-nav__item" data-jump="#overview">行程總覽</button>
+          <button class="quick-nav__item" data-jump="#schedule">每日行程</button>
+          <button class="quick-nav__item" data-jump="#flights">航班資訊</button>
+          <button class="quick-nav__item" data-jump="#care">貼心提醒</button>
+          <button class="quick-nav__item" data-jump="#checklist">行前清單</button>
+        </div>
       </nav>
 
       <main>

@@ -914,6 +914,15 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  /* ── Nav toggle ── */
+  const navToggle = target.closest("#navToggle");
+  if (navToggle) {
+    const nav = navToggle.closest(".quick-nav");
+    const expanded = nav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(expanded));
+    return;
+  }
+
   const jumpTarget = target.closest("[data-jump]");
 
   if (jumpTarget instanceof HTMLElement) {
@@ -922,6 +931,14 @@ document.addEventListener("click", (event) => {
 
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    /* Auto-close nav after clicking a nav item */
+    const nav = jumpTarget.closest(".quick-nav");
+    if (nav && nav.classList.contains("is-open")) {
+      nav.classList.remove("is-open");
+      const toggle = nav.querySelector("#navToggle");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
     }
   }
 

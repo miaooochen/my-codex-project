@@ -282,11 +282,13 @@ h3 {
     background: linear-gradient(135deg, var(--primary), var(--primary-deep));
     border-radius: 6px;
     flex-shrink: 0;
+    pointer-events: none;
   }
 
   .quick-nav__chevron {
     margin-left: auto;
     transition: transform 280ms ease;
+    pointer-events: none;
   }
 
   .quick-nav.is-open .quick-nav__chevron {
@@ -616,6 +618,41 @@ h3 {
     padding: 18px;
   }
 
+  /* ── 所有 grid 區塊：加大間距、確保單欄滿版 ── */
+  .hero__summary {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .overview-grid,
+  .travel-grid,
+  .care-grid,
+  .checklist-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .schedule-list {
+    gap: 16px;
+  }
+
+  .day-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* ── panel / card 確保滿版 ── */
+  .panel,
+  .day-card,
+  .summary-card,
+  .checklist-card,
+  .flight-card,
+  .hotel-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* ── 按鈕與 nav ── */
   .hero__actions,
   .quick-nav {
     gap: 8px;
@@ -628,7 +665,20 @@ h3 {
     width: 100%;
   }
 
+  /* ── 景點圖片 ── */
   .spot-gallery {
     grid-template-columns: 1fr;
+  }
+
+  /* ── Footer 垂直置中 ── */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer p {
+    font-size: 0.88rem;
   }
 }
